@@ -2,6 +2,7 @@
 // Create require function 
 // https://nodejs.org/docs/latest-v18.x/api/module.html#modulecreaterequirefilename
 import { createRequire } from 'node:module';
+import { rps, rpsls } from './lib/rpsls.js'
 const require = createRequire(import.meta.url);
 // The above two lines allow us to use ES methods and CJS methods for loading
 // dependencies.
@@ -62,7 +63,56 @@ const app = express()
 // Set a port for the server to listen on
 const port = args.port || args.p || process.env.PORT || 8080
 // Load app middleware here to serve routes, accept data requests, etc.
-//
+// Create a route for the root of the app
+app.get('/app', function (req, res) {
+    res.status(200)
+    res.send('200 OK')
+})
+// Route for rps with no shot
+app.get('/app/rps', function (req, res) {
+    res.status(200)
+    res.send(rps())
+})
+// Route for rpsls with no shot
+app.get('/app/rpsls', function (req, res) {
+    res.status(200)
+    res.send(rpsls())
+})
+// Route for rps with a shot
+app.get('/app/rps/play', function (req, res) {
+    res.status(200)
+    res.send(rps(req.query.shot))
+})
+// Route for rps with a shot as json
+app.post('/app/rps/play', function (req, res) {
+    res.status(200)
+    res.send(rps(req.body.shot))
+})
+// Route for rpsls with a shot 
+app.get('/app/rpsls/play', function (req, res) {
+    res.status(200)
+    res.send(rpsls(req.query.shot))
+})
+// Route for rpsls with a shot as json
+app.post('/app/rpsls/play', function (req, res) {
+    res.status(200)
+    res.send(rpsls(req.body.shot))
+})
+// Route for rps directly linked to a shot
+app.get('/app/rps/play/:shot', function (req, res) {
+    res.status(200)
+    res.send(rps(req.params.shot))
+})
+// Route for rpsls directly linked to a shot
+app.get('/app/rpsls/play/:shot', function (req, res) {
+    res.status(200)
+    res.send(rpsls(req.params.shot))
+})
+// Default endpoint for any nondefined route
+app.get('*', function (req, res) {
+    res.status(404)
+    res.send('404 NOT FOUND')
+})
 // Create and update access log
 // The morgan format below is the Apache Foundation combined format but with ISO8601 dates
 app.use(morgan(':remote-addr - :remote-user [:date[iso]] ":method :url HTTP/:http-version" :status :res[content-length] ":referrer" ":user-agent"',

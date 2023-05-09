@@ -21,8 +21,14 @@ async function selectGameType(elem) {
 }
 
 async function playGame() {
-    console.log(game)
-    console.log(gameType)
+    let baseurl = document.location.href + 'app/'
+    let url = baseurl + game + '/play'
+    if(gameType == "opponent") {
+        url += '/' + document.querySelector('input[name="shot"]:checked').value
+    }
+    let response = await fetch(url)
+    let data = await response.json()
+    
 }
 
 async function toggleOpponent() {

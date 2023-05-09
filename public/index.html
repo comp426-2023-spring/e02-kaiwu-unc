@@ -15,11 +15,11 @@
         <fieldset>
             <legend>Select a game:</legend>
             <div>
-                <input type="radio" id="rps" name ="game" value="rps" onclick="selectGame(this)" checked>
+                <input type="radio" id="rps" name="game" value="rps" onclick="selectGame(this)" checked>
                 <label for="rps">Rock, Paper, Scissors</label>
             </div>
             <div>
-                <input type="radio" id="rpsls" name ="game" value="rpsls" onclick="selectGame(this)">
+                <input type="radio" id="rpsls" name="game" value="rpsls" onclick="selectGame(this)">
                 <label for="rpsls">Rock, Paper, Scissors, Lizard, Spock</label>
             </div>
         </fieldset>
@@ -39,29 +39,29 @@
     </div>
     <div class="choices" hidden>
         <h2>Choose your shot:</h2>
-        <button id="rock" onclick="selectChoice(this)"><img src="img/rock.jpg" alt="Rock"></button>
-        <button id="paper" onclick="selectChoice(this)"><img src="img/paper.jpg" alt="Paper"></button>
-        <button id="scissors" onclick="selectChoice(this)"><img src="img/scissors.jpg" alt="Scissors"></button>
-        <button id="lizard" onclick="selectChoice(this)" hidden><img src="img/lizard.jpg" alt="Lizard"></button>
-        <button id="spock" onclick="selectChoice(this)" hidden><img src="img/spock.jpg" alt="Spock"></button>
+        <button id="rock" name="chooseButton" onclick="selectChoice(this)"><img src="img/rock.jpg" alt="Rock"></button>
+        <button id="paper" name="chooseButton" onclick="selectChoice(this)"><img src="img/paper.jpg" alt="Paper"></button>
+        <button id="scissors" name="chooseButton" onclick="selectChoice(this)"><img src="img/scissors.jpg" alt="Scissors"></button>
+        <button id="lizard" name="chooseButton" onclick="selectChoice(this)" hidden><img src="img/lizard.jpg" alt="Lizard"></button>
+        <button id="spock" name="chooseButton" onclick="selectChoice(this)" hidden><img src="img/spock.jpg" alt="Spock"></button>
     </div>
     <div class="chosenChoice" hidden>
         <h2>Chosen shot:</h2>
-        <button id="chosenrock" hidden><img src="img/rock.jpg" alt="Rock"></button>
-        <button id="chosenpaper" hidden><img src="img/paper.jpg" alt="Paper"></button>
-        <button id="chosenscissors" hidden><img src="img/scissors.jpg" alt="Scissors"></button>
-        <button id="chosenlizard" hidden><img src="img/lizard.jpg" alt="Lizard"></button>
-        <button id="chosenspock" hidden><img src="img/spock.jpg" alt="Spock"></button>
+        <button id="chosenrock" name="chosenButton" hidden><img src="img/rock.jpg" alt="Rock"></button>
+        <button id="chosenpaper" name="chosenButton" hidden><img src="img/paper.jpg" alt="Paper"></button>
+        <button id="chosenscissors" name="chosenButton" hidden><img src="img/scissors.jpg" alt="Scissors"></button>
+        <button id="chosenlizard" name="chosenButton" hidden><img src="img/lizard.jpg" alt="Lizard"></button>
+        <button id="chosenspock" name="chosenButton" hidden><img src="img/spock.jpg" alt="Spock"></button>
     </div>
     <div class="buttons">
-        <button class="usageButton" id="playButton" onclick="playGame()">Play</button>
-        <button class="usageButton" id="rulesButton" onclick="showRules()">Rules</button>
-        <button class="usageButton" id="resetButton" onclick="resetGame()">Reset</button>
+        <button class="usageButton" name="actionButton" id="playButton" onclick="playGame()">Play</button>
+        <button class="usageButton" name="actionButton" id="rulesButton" onclick="showRules()">Rules</button>
+        <button class="usageButton" name="actionButton" id="resetButton" onclick="resetGame()">Reset</button>
     </div>
     <dialog id="results">
         <h2>Results:</h2>
         <p id="result"></p>
-        <button onclick="closeResults()">Close</button>
+        <button name="closeButton" onclick="closeResults()">Close</button>
     </dialog>
     <dialog id="rpsRules">
         <h2>Rules:</h2>
@@ -70,7 +70,7 @@
             - Scissors CUTS Paper <br>
             - Paper COVERS Rock <br>
             - Rock CRUSHES Scissors</p>
-        <button onclick="closeRules()">Close</button>
+        <button name="closeButton" onclick="closeRules()">Close</button>
     </dialog>
     <dialog id="rpslsRules">
         <h2>Rules:</h2>
@@ -86,7 +86,7 @@
             - Paper DISPROVES Spock<br>
             - Spock VAPORIZES Rock<br>
             - Rock CRUSHES Scissors</p>
-        <button onclick="closeRules()">Close</button>
+        <button name="closeButton" onclick="closeRules()">Close</button>
     </dialog>
     </body>
 </html>

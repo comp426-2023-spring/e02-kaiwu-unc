@@ -1,7 +1,7 @@
 // If you would like to see some examples of similar code to make an interface interact with an API, 
 // check out the coin-server example from a previous COMP 426 semester.
 // https://github.com/jdmar3/coinserver
-var game, gameType
+var game, gameType, shot
 document.addEventListener("DOMContentLoaded", function() {  
     game = document.querySelector('input[name="game"]:checked').value
     gameType = document.querySelector('input[name="gameType"]:checked').value
@@ -12,6 +12,7 @@ document.addEventListener("DOMContentLoaded", function() {
 async function selectGame(elem) {
     game = elem.value
     toggleGame()
+    resetShotChoice()
 }
 
 async function selectGameType(elem) {
@@ -27,10 +28,10 @@ async function playGame() {
 async function toggleOpponent() {
     if(gameType == "opponent") {
         document.getElementsByClassName("choices")[0].hidden = false
-        document.getElementsByClassName("chosenChoices")[0].hidden = false
+        document.getElementsByClassName("chosenChoice")[0].hidden = false
     } else {
         document.getElementsByClassName("choices")[0].hidden = true
-        document.getElementsByClassName("chosenChoices")[0].hidden = true
+        document.getElementsByClassName("chosenChoice")[0].hidden = true
     }
 }
 
@@ -41,5 +42,18 @@ async function toggleGame() {
     } else {
         document.getElementById("lizard").hidden = false
         document.getElementById("spock").hidden = false
+    }
+}
+
+async function selectChoice(elem) {
+    chosenShot = "chosen" + elem.id
+    resetShotChoice()
+    document.getElementById(chosenShot).hidden = false
+}
+
+async function resetShotChoice(){
+    let buttons = document.querySelectorAll(".chosenChoice button");
+    for (let button of buttons) {
+        button.hidden = true
     }
 }

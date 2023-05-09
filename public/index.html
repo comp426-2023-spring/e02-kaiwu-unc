@@ -13,11 +13,11 @@
         <fieldset>
             <legend>Select a game:</legend>
             <div>
-                <input type="radio" id="rps" name ="game" value="rps" onClick="selectGame(this)" checked>
+                <input type="radio" id="rps" name ="game" value="rps" onclick="selectGame(this)" checked>
                 <label for="rps">Rock, Paper, Scissors</label>
             </div>
             <div>
-                <input type="radio" id="rpsls" name ="game" value="rpsls" onClick="selectGame(this)">
+                <input type="radio" id="rpsls" name ="game" value="rpsls" onclick="selectGame(this)">
                 <label for="rpsls">Rock, Paper, Scissors, Lizard, Spock</label>
         </fieldset>
     </div>
@@ -25,28 +25,29 @@
         <fieldset>
             <legend>Game Type:</legend>
             <div>
-                <input type="radio" id="random" name="gameType" value="random" onClick="selectGameType(this)" checked>
+                <input type="radio" id="random" name="gameType" value="random" onclick="selectGameType(this)" checked>
                 <label for="random">Random</label>
             </div>
             <div>
-                <input type="radio" id="opponent" name="gameType" value="opponent" onClick="selectGameType(this)">
+                <input type="radio" id="opponent" name="gameType" value="opponent" onclick="selectGameType(this)">
                 <label for="opponent">Opponent</label>
         </fieldset>
     </div>
     <div class="choices" hidden>
         <h2>Choose your shot:</h2>
-        <button id="rock"><img id="image" src="img/rock.jpg"></button>
-        <button id="paper"><img id="image" src="img/paper.jpg"></button>
-        <button id="scissors"><img id="image" src="img/scissors.jpg"></button>
-        <button id="lizard" hidden><img id="image" src="img/lizard.jpg"></button>
-        <button id="spock" hidden><img id="image" src="img/spock.jpg"></button>
+        <button id="rock" onclick="selectChoice(this)"><img id="image" src="img/rock.jpg"></button>
+        <button id="paper" onclick="selectChoice(this)"><img id="image" src="img/paper.jpg"></button>
+        <button id="scissors" onclick="selectChoice(this)"><img id="image" src="img/scissors.jpg"></button>
+        <button id="lizard" onclick="selectChoice(this)" hidden><img id="image" src="img/lizard.jpg"></button>
+        <button id="spock" onclick="selectChoice(this)" hidden><img id="image" src="img/spock.jpg"></button>
     </div>
     <div class="chosenChoice" hidden>
-        <button id="chosenRock" hidden><img id="image" src="img/rock.jpg"></button>
-        <button id="chosenPaper" hidden><img id="image" src="img/paper.jpg"></button>
-        <button id="chosenScissors" hidden><img id="image" src="img/scissors.jpg"></button>
-        <button id="chosenLizard" hidden><img id="image" src="img/lizard.jpg"></button>
-        <button id="chosenSpock" hidden><img id="image" src="img/spock.jpg"></button>
+        <h2>Chosen shot:</h2>
+        <button id="chosenrock" hidden><img id="image" src="img/rock.jpg"></button>
+        <button id="chosenpaper" hidden><img id="image" src="img/paper.jpg"></button>
+        <button id="chosenscissors" hidden><img id="image" src="img/scissors.jpg"></button>
+        <button id="chosenlizard" hidden><img id="image" src="img/lizard.jpg"></button>
+        <button id="chosenspock" hidden><img id="image" src="img/spock.jpg"></button>
     </div>
     <button class="playButton" id="playButton" onClick="playGame()">Play</button>
     </body>

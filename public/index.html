@@ -3,7 +3,7 @@
         <title>Rock, Paper, Scissors</title>
         <!-- Link to your script file(s) and CSS in here somewhere -->
         <link rel="stylesheet" href="styles.css">
-        <script src="scripts.js"></script>
+        <script src="scripts.js" defer></script>
     </head>
     <body>
 
@@ -25,14 +25,29 @@
         <fieldset>
             <legend>Game Type:</legend>
             <div>
-                <input type="radio" id="random" name ="gameType" value="random" onClick="selectGameType(this)" checked>
+                <input type="radio" id="random" name="gameType" value="random" onClick="selectGameType(this)" checked>
                 <label for="random">Random</label>
             </div>
             <div>
-                <input type="radio" id="opponent" name ="gameType" value="opponent" onClick="selectGameType(this)">
+                <input type="radio" id="opponent" name="gameType" value="opponent" onClick="selectGameType(this)">
                 <label for="opponent">Opponent</label>
         </fieldset>
-    </div class='playButton'>
-    <button id="playButton" onClick="playGame()">Play</button>
+    </div>
+    <div class="choices" hidden>
+        <h2>Choose your shot:</h2>
+        <button id="rock"><img id="image" src="img/rock.jpg"></button>
+        <button id="paper"><img id="image" src="img/paper.jpg"></button>
+        <button id="scissors"><img id="image" src="img/scissors.jpg"></button>
+        <button id="lizard" hidden><img id="image" src="img/lizard.jpg"></button>
+        <button id="spock" hidden><img id="image" src="img/spock.jpg"></button>
+    </div>
+    <div class="chosenChoice" hidden>
+        <button id="chosenRock" hidden><img id="image" src="img/rock.jpg"></button>
+        <button id="chosenPaper" hidden><img id="image" src="img/paper.jpg"></button>
+        <button id="chosenScissors" hidden><img id="image" src="img/scissors.jpg"></button>
+        <button id="chosenLizard" hidden><img id="image" src="img/lizard.jpg"></button>
+        <button id="chosenSpock" hidden><img id="image" src="img/spock.jpg"></button>
+    </div>
+    <button class="playButton" id="playButton" onClick="playGame()">Play</button>
     </body>
 </html>

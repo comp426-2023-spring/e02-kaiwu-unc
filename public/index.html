@@ -49,6 +49,11 @@
         <button id="chosenlizard" hidden><img id="image" src="img/lizard.jpg"></button>
         <button id="chosenspock" hidden><img id="image" src="img/spock.jpg"></button>
     </div>
-    <button class="playButton" id="playButton" onClick="playGame()">Play</button>
+    <button class="playButton" id="playButton" onclick="playGame()">Play</button>
+    <dialog id="results">
+        <h2>Results:</h2>
+        <p id="result"></p>
+        <button id="closeButton" onClick="closeDialog()">Close</button>
+    </dialog>
     </body>
 </html>

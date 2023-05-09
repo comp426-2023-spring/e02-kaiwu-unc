@@ -46,3 +46,7 @@ input {
     height: 10em;
     width: 10em;
 }
+
+dialog{
+    border-radius: 1em;
+}

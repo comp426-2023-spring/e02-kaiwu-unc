@@ -72,9 +72,9 @@ async function selectChoice(elem) {
 }
 
 async function resetShotChoice(){
-    let buttons = document.querySelectorAll(".chosenChoice button");
-    for (let button of buttons) {
-        button.hidden = true
+    let images = document.querySelectorAll(".chosenChoice img");
+    for (let image of images) {
+        image.hidden = true
     }
 }
 

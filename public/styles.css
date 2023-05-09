@@ -34,7 +34,7 @@ input {
     margin: 0.5rem;
 }
 
-.playButton{
+.usageButton{
     margin: 0.5rem;
     padding: 0.5rem;
     font-size: 1.2rem;
@@ -43,8 +43,8 @@ input {
     background-color: #f0f0f0;
 }
 #image{
-    height: 10em;
-    width: 10em;
+    height: 5em;
+    width: 5em;
 }
 
 dialog{

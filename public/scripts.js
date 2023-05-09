@@ -11,6 +11,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 async function selectGame(elem) {
     game = elem.value
+    shot = undefined
     toggleGame()
     resetShotChoice()
 }
@@ -51,12 +52,14 @@ async function toggleOpponent() {
 }
 
 async function toggleGame() {
+    document.getElementById("playButton").disabled = true
     if(game == "rps") {
         document.getElementById("lizard").hidden = true
         document.getElementById("spock").hidden = true
     } else {
         document.getElementById("lizard").hidden = false
         document.getElementById("spock").hidden = false
+        
     }
 }
 
@@ -65,6 +68,7 @@ async function selectChoice(elem) {
     shot = elem.id
     resetShotChoice()
     document.getElementById(chosenShot).hidden = false
+    document.getElementById("playButton").disabled = false
 }
 
 async function resetShotChoice(){
@@ -74,6 +78,23 @@ async function resetShotChoice(){
     }
 }
 
-async function closeDialog() {
+async function closeResults() {
     document.getElementById("results").close()
+}
+
+async function closeRules() {
+    document.getElementById("rpsRules").close()
+    document.getElementById("rpslsRules").close()
+}
+
+async function showRules() {
+    if(game == "rps") {
+        document.getElementById("rpsRules").showModal()
+    } else {
+        document.getElementById("rpslsRules").showModal()
+    }
+}
+
+async function resetGame() {
+    location.reload(true)
 }

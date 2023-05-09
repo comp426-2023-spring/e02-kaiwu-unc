@@ -35,11 +35,11 @@
     </div>
     <div class="choices" hidden>
         <h2>Choose your shot:</h2>
-        <button id="rock" onclick="selectChoice(this)"><img id="image" src="img/rock.jpg"></button>
-        <button id="paper" onclick="selectChoice(this)"><img id="image" src="img/paper.jpg"></button>
-        <button id="scissors" onclick="selectChoice(this)"><img id="image" src="img/scissors.jpg"></button>
-        <button id="lizard" onclick="selectChoice(this)" hidden><img id="image" src="img/lizard.jpg"></button>
-        <button id="spock" onclick="selectChoice(this)" hidden><img id="image" src="img/spock.jpg"></button>
+        <button id="rock" onclick="selectChoice(this)"><legend>Rock</legend><img id="image" src="img/rock.jpg"></button>
+        <button id="paper" onclick="selectChoice(this)"><legend>Paper</legend><img id="image" src="img/paper.jpg"></button>
+        <button id="scissors" onclick="selectChoice(this)"><legend>Scissors</legend><img id="image" src="img/scissors.jpg"></button>
+        <button id="lizard" onclick="selectChoice(this)" hidden><legend>Lizard</legend><img id="image" src="img/lizard.jpg"></button>
+        <button id="spock" onclick="selectChoice(this)" hidden><legend>Spock</legend><img id="image" src="img/spock.jpg"></button>
     </div>
     <div class="chosenChoice" hidden>
         <h2>Chosen shot:</h2>
@@ -49,11 +49,40 @@
         <button id="chosenlizard" hidden><img id="image" src="img/lizard.jpg"></button>
         <button id="chosenspock" hidden><img id="image" src="img/spock.jpg"></button>
     </div>
-    <button class="playButton" id="playButton" onclick="playGame()">Play</button>
+    <div class="buttons">
+        <button class="usageButton" id="playButton" onclick="playGame()">Play</button>
+        <button class="usageButton" id="rulesButton" onclick="showRules()">Rules</button>
+        <button class="usageButton" id="resetButton" onclick="resetGame()">Reset</button>
+    </div>
     <dialog id="results">
         <h2>Results:</h2>
         <p id="result"></p>
-        <button id="closeButton" onClick="closeDialog()">Close</button>
+        <button id="closeButton" onclick="closeResults()">Close</button>
+    </dialog>
+    <dialog id="rpsRules">
+        <h2>Rules:</h2>
+        <p>Rules for Rock Paper Scissors:<br>
+           <br>
+            - Scissors CUTS Paper <br>
+            - Paper COVERS Rock <br>
+            - Rock CRUSHES Scissors</p>
+        <button id="closeButton" onclick="closeRules()">Close</button>
+    </dialog>
+    <dialog id="rpslsRules">
+        <h2>Rules:</h2>
+        <p>Rules for the Lizard-Spock Expansion of Rock Paper Scissors: <br>
+            <br>
+            - Scissors CUTS Paper<br>
+            - Paper COVERS Rock<br>
+            - Rock SMOOSHES Lizard<br>
+            - Lizard POISONS Spock<br>
+            - Spock SMASHES Scissors<br>
+            - Scissors DECAPITATES Lizard<br>
+            - Lizard EATS Paper<br>
+            - Paper DISPROVES Spock<br>
+            - Spock VAPORIZES Rock<br>
+            - Rock CRUSHES Scissors</p>
+        <button id="closeButton" onclick="closeRules()">Close</button>
     </dialog>
     </body>
 </html>
